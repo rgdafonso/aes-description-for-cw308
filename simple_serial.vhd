@@ -76,7 +76,7 @@ signal txdata_hex: std_logic_vector (3 downto 0);
 signal sload_pt : std_logic;
 signal sdo_enc : std_logic;
 
-component async_receiver_lellis
+component async_receiver
 	port (
 		clk: in std_logic;
 		RxD: in std_logic;
@@ -97,7 +97,7 @@ end component;
 
 begin
 
-RX : async_receiver_lellis
+RX : async_receiver
             port map (
                 RxD => RxD,
                 RxD_data => RxD_data,

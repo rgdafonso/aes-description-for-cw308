@@ -23,7 +23,7 @@ use ieee.std_logic_misc.all;
 --use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 
-entity async_receiver_lellis is 
+entity async_receiver is 
 generic (
         ClkFrequency : INTEGER := 7372800 ;
         Baud : INTEGER := 38400 ;
@@ -42,7 +42,7 @@ generic (
 end entity; 
 
 
-architecture rtl of async_receiver_lellis is 
+architecture rtl of async_receiver is 
     --signal Baud8GeneratorInc : std_logic_vector(Baud8GeneratorAccWidth downto 0) := (((Baud8 sll ( Baud8GeneratorAccWidth - 7)) + (ClkFrequency srl 8))/(ClkFrequency srl 7)) ;
     signal Baud8GeneratorInc : std_logic_vector(Baud8GeneratorAccWidth downto 0) := "00000101010101011";
     signal Baud8GeneratorAcc : std_logic_vector(Baud8GeneratorAccWidth downto 0) := (others => '0');
